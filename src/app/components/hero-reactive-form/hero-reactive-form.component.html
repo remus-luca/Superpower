@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-between m-5 mb-0">
+  <form>
+    <div class="form-group d-flex">
+      <label for="formGroupExampleInput">Search Hero</label>
+      <input type="text" class="form-control m-2" id="formGroupExampleInput" placeholder="Search Hero">
+    </div>
+  </form>
+  <div>
+
+
+    <button type="button" class="btn btn-info add-heroes fw-semibold" data-bs-toggle="modal"
+      data-bs-target="#exampleModal5">
+      Add Heroes
+    </button>
+    <app-superpower-reactive-form></app-superpower-reactive-form>
+
+
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hero</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="productForm">
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">SuperHero Name:</label>
+                <input autocomplete="off" formControlName="superheroName" type="text" class="form-control"
+                  id="formGroupExampleInput2" placeholder="SuperHero Name">
+              </div>
+              <div
+                *ngIf="productForm.controls['superheroName'].invalid  &&( productForm.controls['superheroName'].dirty || productForm.controls['superheroName'].touched)">
+                <div class="fs-5  text-danger fw-semibold"
+                  *ngIf="productForm.controls['superheroName'].errors && productForm.controls['superheroName'].errors['required']">
+                  Va rugam
+                  introduceti numele
+                </div>
+                <div class="fs-5 text-warning fw-semibold"
+                  *ngIf="productForm.controls['superheroName'].errors && productForm.controls['superheroName'].errors['minlength']">
+                  Va rugam introduceti minim 3 caractere
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="formGroupExampleInput3">Real Name:</label>
+                <input autocomplete="off" formControlName="realName" type="text" class="form-control"
+                  id="formGroupExampleInput3" placeholder="Real Name">
+              </div>
+              <div
+                *ngIf="productForm.controls['realName'].invalid  &&( productForm.controls['realName'].dirty || productForm.controls['realName'].touched)">
+                <div class="fs-5  text-danger fw-semibold"
+                  *ngIf="productForm.controls['realName'].errors && productForm.controls['realName'].errors['required']">
+                  Va rugam
+                  introduceti numele
+                </div>
+
+
+
+
+
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput4">Image:</label>
+                <input autocomplete="off" formControlName="imageUrl" type="text" class="form-control"
+                  id="formGroupExampleInput4" placeholder="Image">
+              </div>
+              <div
+                *ngIf="productForm.controls['imageUrl'].invalid  &&( productForm.controls['imageUrl'].dirty || productForm.controls['imageUrl'].touched)">
+                <div class="fs-5  text-warning fw-semibold"
+                  *ngIf="productForm.controls['imageUrl'].errors && productForm.controls['imageUrl'].errors['required']">
+                  Va rugam
+                  introduceti o imagine
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger fw-semibold cancel" data-bs-dismiss="modal"
+              (click)="onCloseModal()">Cancel</button>
+            <button type="button" class="btn btn-primary fw-semibold save" [disabled]="!productForm.valid"
+              data-bs-dismiss="modal" (click)="addHero()">{{submitButtonText}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,92 @@
+img {
+  width: 18.5rem;
+}
+
+.card {
+  width: 21rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.select {
+  width: 15rem;
+  height: 15rem
+}
+
+.super {
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+}
+
+.hero {
+  margin-left: 1rem;
+}
+.edit-hero {
+  background-color: #2b2f33;
+  color: #ffc107;
+  width: 8rem;
+  margin-left: 1rem;
+}
+
+.edit-hero:hover {
+  background-color: #ffc107;
+  color: #2b2f33;
+}
+
+.delete-hero {
+  background-color: #2b2f33;
+  color: #dc3545;
+  width: 8rem;
+  margin-left: 1rem;
+
+}
+
+.delete-hero:hover {
+  background-color: #dc3545;
+  color: #2b2f33;
+}
+// .svg{
+//   width: 5rem;
+// }
+.add-superpowers {
+  color: #0dcaf0;
+  background-color: #2b2f33;
+  width: 18.5rem;
+}
+
+.add-superpowers:hover {
+  background-color: #0dcaf0;
+  color: #3d4144;
+}
+
+.cancel {
+  background-color: white;
+  color: #dc3545;
+}
+
+.cancel:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.save {
+  color: #0d6efd;
+  background-color: white;
+}
+
+.save:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+// .superpowers {
+//   margin-left: 1rem;
+//   margin-top: 0 auto;
+// }
+
+// hr {
+//   margin-left: 1rem;
+
+//   width: 18.5rem;
+// }

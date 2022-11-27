@@ -1,0 +1,56 @@
+<button type="button" class="btn btn-info add-superpowers fw-semibold" data-bs-toggle="modal"
+  data-bs-target="#exampleModal4">
+  Add Superpowers
+</button>
+
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formSuperpower">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Name:</label>
+            <input autocomplete="off" formControlName="name" type="text" class="form-control" id="formGroupExampleInput"
+              placeholder="Name">
+          </div>
+          <div
+            *ngIf="formSuperpower.controls['name'].invalid  &&( formSuperpower.controls['name'].dirty || formSuperpower.controls['name'].touched)">
+            <div class="fs-5  text-danger fw-semibold"
+              *ngIf="formSuperpower.controls['name'].errors && formSuperpower.controls['name'].errors['required']">
+              Va rugam
+              introduceti numele
+            </div>
+            <div class="fs-5 text-warning fw-semibold"
+              *ngIf="formSuperpower.controls['name'].errors && formSuperpower.controls['name'].errors['minlength']">
+              Va rugam introduceti minim 3 caractere
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Icon:</label>
+            <input autocomplete="off" formControlName="icon" type="text" class="form-control" id="formGroupExampleInput"
+              placeholder="Icon">
+          </div>
+          <div
+            *ngIf="formSuperpower.controls['icon'].invalid  &&( formSuperpower.controls['icon'].dirty || formSuperpower.controls['icon'].touched)">
+            <div class="fs-5  text-warning fw-semibold"
+              *ngIf="formSuperpower.controls['icon'].errors && formSuperpower.controls['icon'].errors['required']">
+              Va rugam
+              introduceti un icon
+            </div>
+            </div>
+            </form>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger fw-semibold cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" data-bs-dismiss="modal" class="btn btn-primary fw-semibold save"
+                [disabled]="!formSuperpower.valid" (click)="addSuperpower()">Save
+              </button>
+            </div>
+            </div>
+            </div>
+</div>

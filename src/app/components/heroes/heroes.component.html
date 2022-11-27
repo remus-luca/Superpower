@@ -1,0 +1,6 @@
+<!-- <app-superpower-reactive-form></app-superpower-reactive-form> -->
+<app-hero-reactive-form [heroToBeEdited]="heroToBeEdited" (close)="onFormClose()"></app-hero-reactive-form>
+
+<div class="container card-group">
+  <app-hero-item (editSupehero)="editHero($event)" *ngFor="let hero of heroes" [hero]="hero"></app-hero-item>
+</div>
