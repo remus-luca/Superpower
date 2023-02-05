@@ -4,9 +4,9 @@ import {
   FormControl,
   FormGroup,
   Validators,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { SuperpowerService } from 'src/app/core/services';
-import { HeroStoreService } from 'src/app/store/hero-store.service';
 import { SuperpowerStoreService } from 'src/app/store/superpower-store.service';
 @Component({
   selector: 'app-superpower-reactive-form',

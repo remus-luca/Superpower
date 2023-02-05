@@ -1,7 +1,6 @@
 import {
   Component,
   EventEmitter,
-  Inject,
   Input,
   OnChanges,
   OnInit,
@@ -10,12 +9,11 @@ import {
 } from '@angular/core';
 import {
   FormGroup,
-  FormBuilder,
   Validators,
   FormControl,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { Hero } from 'src/app/core/interfaces';
-import { HeroService } from 'src/app/core/services';
 import { HeroStoreService } from 'src/app/store/hero-store.service';
 
 enum formSubmitState {

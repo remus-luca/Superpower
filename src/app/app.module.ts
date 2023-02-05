@@ -7,8 +7,9 @@ import { HeroService } from './core/services';
 import { HeroItemComponent } from './components/hero-item/hero-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeroReactiveFormComponent } from './components/hero-reactive-form/hero-reactive-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup } from '@angular/forms';
 import { SuperpowerReactiveFormComponent } from './components/superpower-reactive-form/superpower-reactive-form.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SuperpowerReactiveFormComponent } from './components/superpower-reactiv
     HeroReactiveFormComponent,
     SuperpowerReactiveFormComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [HeroService],
   bootstrap: [AppComponent],
 })
